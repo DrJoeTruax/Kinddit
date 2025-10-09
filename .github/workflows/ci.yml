@@ -1,0 +1,22 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { submodules: true }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - name: API import smoke
+        working-directory: apps/api
+        run: |
+          python -c "print('python ok')"
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Web install
+        working-directory: apps/frontend
+        run: npm ci || npm install
+      - name: Web build
+        working-directory: apps/frontend
+        run: npm run build

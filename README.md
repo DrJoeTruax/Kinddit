@@ -1,8 +1,48 @@
-# Kinddit MVP Scaffold
+# Kinddit
+
+**Kinddit** is an open-core, AGPL-3.0 licensed platform for public, safe-by-design communities.
+- No DMs.
+- All interactions are public or via Tickets.
+- See [safety-pack](https://github.com/DrJoeTruax/safety-pack) for commercial extensions.
+
+## Open-core model
+
+- The core of Kinddit is fully open and free (AGPL-3.0).
+- Advanced moderation, ML, and reputation features are available only via the proprietary [safety-pack](https://github.com/DrJoeTruax/safety-pack).
+
+## Monorepo structure
+
+```
+/apps
+  /frontend
+  /api
+/packages
+  /shared
+  /sdk
+/infra
+  /docker
+  /terraform
+/tests
+```
+
+## Community
+
+- [Contributing](CONTRIBUTING.md)
+- [Governance](GOVERNANCE.md)
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Feature Matrix](FEATURE_GATES.md)
+
+## License
+
+AGPL-3.0 © [DrJoeTruax](https://github.com/DrJoeTruax)
+
+---
+
+## Kinddit MVP Scaffold
 
 This repository now includes a Next.js 14 (App Router) scaffold styled with Tailwind, shadcn-inspired components, and Supabase-ready utilities so you can quickly iterate on the safety-first Reddit alternative described below. Use this as the foundation for shipping the production MVP.
 
-## Getting Started
+### Getting Started (Next.js app)
 
 ```bash
 pnpm install # or npm install / yarn install
@@ -12,6 +52,7 @@ pnpm dev
 The development server runs on http://localhost:3000. Update the values in `.env.example` and copy them to `.env.local` once you connect your Supabase project.
 
 ---
+
 Here is your **Lean V1 Copilot Master Brief — Kinddit (MVP Edition)**
 
 It’s designed for **speed, polish, and validation**, using modern hosted tools:
@@ -257,4 +298,28 @@ npx supabase db push
 
 ---
 
-Would you like me to append this with a **sample Supabase table seed file** and **Next.js environment config** (so Copilot can initialize the DB automatically)?
+## Supabase & Next.js Environment
+
+- Copy `apps/api/.env.dev` to `.env` for local API development.
+- Copy `apps/frontend/.env.dev` to `.env.local` for the monorepo Next.js example.
+- Create a root-level `.env.local` for the App Router scaffold with the following values:
+
+```
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
+```
+
+---
+
+## Deployment Targets
+
+- Docker Compose definitions remain under `infra/docker/compose.yml` for local multi-service testing.
+- CI is configured via `.github/workflows/ci.yml` (restored) and should be extended to cover both the API and frontend apps.
+
+---
+
+## Contributing
+
+Please read the restored community documents before contributing changes. When opening pull requests, resolve merge conflicts locally and ensure the CI workflow passes.
+
