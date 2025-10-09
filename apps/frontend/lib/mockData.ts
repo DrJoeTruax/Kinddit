@@ -14,7 +14,7 @@ export const communities: CommunitySummary[] = [
     description: "Designing safer, transparent online communities.",
     members: 28342,
     tags: ["research", "moderation", "ux"],
-    bannerUrl: "/images/banners/product-safety.jpg"
+    bannerUrl: "/images/banners/product-safety.svg"
   },
   {
     name: "Kindness Club",
@@ -22,7 +22,7 @@ export const communities: CommunitySummary[] = [
     description: "Daily stories of community wins and mutual aid.",
     members: 18763,
     tags: ["feel-good", "stories"],
-    bannerUrl: "/images/banners/kindness-club.jpg"
+    bannerUrl: "/images/banners/kindness-club.svg"
   },
   {
     name: "Mod School",
@@ -30,7 +30,7 @@ export const communities: CommunitySummary[] = [
     description: "Playbooks for humane, effective moderation teams.",
     members: 9421,
     tags: ["moderation", "playbooks"],
-    bannerUrl: "/images/banners/mod-school.jpg"
+    bannerUrl: "/images/banners/mod-school.svg"
   }
 ];
 
